@@ -30,7 +30,7 @@ class BookmarkButton extends React.Component {
             "post_id": this.props.postId
         };
         
-        fetch("/api/bookmarks/", {
+        fetch("https://photo-app-secured.herokuapp.com/api/bookmarks/", {
             method: "POST",
             headers: getHeaders(),
             body: JSON.stringify(postData)
@@ -46,7 +46,7 @@ class BookmarkButton extends React.Component {
         console.log('code to unbookmark the post');
         // issue fetch request and then afterwards requery for the post:
         // this.props.requeryPost();
-        const url = `api/bookmarks/${this.props.bookmarkId}`
+        const url = `https://photo-app-secured.herokuapp.com/api/bookmarks/${this.props.bookmarkId}`
     
         fetch(url, {
          method: "DELETE",

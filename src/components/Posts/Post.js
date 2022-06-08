@@ -21,7 +21,7 @@ class Post extends React.Component {
     }
 
     refreshPost(){
-        fetch(`/api/posts/${this.state.post.id}`, {
+        fetch(`https://photo-app-secured.herokuapp.com/api/posts/${this.state.post.id}`, {
             method: "GET",
             headers: getHeaders()
         })

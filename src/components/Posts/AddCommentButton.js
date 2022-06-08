@@ -25,7 +25,7 @@ class AddCommentButton extends React.Component {
             "text": this.state.comment
         };
         
-        fetch("/api/comments", {
+        fetch("https://photo-app-secured.herokuapp.com/api/comments", {
                 method: "POST",
                 headers: getHeaders(),
                 body: JSON.stringify(postData)

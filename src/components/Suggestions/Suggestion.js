@@ -34,7 +34,7 @@ class Suggestion extends React.Component {
             "user_id": userId
         };
         
-        fetch("/api/following/", {
+        fetch("https://photo-app-secured.herokuapp.com/api/following/", {
                 method: "POST",
                 headers: getHeaders(),
                 body: JSON.stringify(postData)
@@ -52,7 +52,7 @@ class Suggestion extends React.Component {
     unfollow(followingId) {
         console.log('code to unfollow the user');
 
-        const url = `/api/following/${followingId}`;
+        const url = `https://photo-app-secured.herokuapp.com/api/following/${followingId}`;
         fetch(url, {
             method: "DELETE",
             headers: getHeaders()
