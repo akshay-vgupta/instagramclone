@@ -1,0 +1,775 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+}
+*/
+aside, main, nav {
+    padding: 10px;
+}
+/*
+h1, h2, h3, h4 {
+    font-family: 'Comfortaa', cursive;
+}
+a, a:visited, a:hover, a:link {
+    color: rgb(44, 105, 155);
+}
+a:hover {
+    color: #777;
+}
+button.link {
+    color: rgb(44, 105, 155);
+    background-color: transparent;
+    border-width: 0px;
+}
+button.link:hover {
+    color: #777;
+}
+
+button.link.following {
+    padding: 5px 10px !important;
+}
+button.link.following.active {
+    background-color: white;
+    padding: 5px 10px !important;
+    border: solid 1px #CCC;
+    border-radius: 4px;
+}
+header {
+    margin-top: 20px;
+}
+
+nav {
+    position: sticky;
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    border-bottom: solid #dbdbdb 1px;
+    left: 0px;
+    top: 0px;
+    padding: 0px 3vw;
+}
+
+nav, nav ul, .card .header, .card .buttons, .card .add-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul {
+    list-style-type: none;
+}
+li {
+    margin-left: 30px;
+}
+
+aside {
+    position: fixed;
+    right: 0px;
+    top: 70px;
+    width: calc(40vw - 6px);
+    background-color: #f2f2f2;
+    height: calc(100vh - 100px);
+    padding-left: 30px;
+}
+main {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.stories {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 50vw;
+    min-width: 540px;
+    border: solid 1px #dbdbdb;
+    margin-bottom: 30px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.stories > div {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stories > div .pic {
+    min-width: 50px;
+    min-height: 50px;
+    border: solid 3px #dbdbdb;
+    border-radius: 27px;
+}
+.stories p {
+    margin-top: 4px;
+    margin-bottom: 0px;
+    font-size: 0.80em;
+    color: #999;
+    width: 66px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.card {
+    border: solid 1px #dbdbdb;
+    margin-bottom: 30px;
+    background-color: #fff;
+    width: 50vw;
+    min-width: 540px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+.card .header, .card .info {
+    padding: 10px;
+    color: #444;
+}
+
+.card .buttons {
+    font-size: 1.3em;
+    padding: 5px;
+}
+.card .buttons i {
+    margin-right: 4px;
+}
+
+.card  button.link {
+    font-size: 1em;
+}
+
+.card .caption, .card .comments, .likes {
+    padding: 0px 5px;
+}
+.card .caption p, .card .comments p {
+    margin: 8px 0px 3px 0px;
+    font-size: 0.9em;
+}
+.card .timestamp {
+    color: #999;
+    text-transform: uppercase;
+    font-size: 0.70em !important;
+    margin-bottom: 5px;
+}
+.card .add-comment {
+    border-top: solid 1px #dbdbdb;
+    padding: 10px 15px;
+}
+
+.card .add-comment .input-holder {
+    width: 90%;
+}
+
+.card .add-comment input, .card .add-comment input:focus, .card .add-comment input:focus-visible {
+    border-width: 0px;
+    outline: none;
+    font-size: 0.95em;
+    width: 85%;
+    padding: 10px 0px;
+}
+.card .add-comment i {
+    font-size: 1.3em;
+    margin-right: 10px;
+}
+
+.card strong, .modal strong {
+    margin-right: 6px;
+}
+.card p {
+    line-height: 1.2em;
+}
+
+.card .link {
+    margin: 0px;
+    padding: 10px 0px;
+    font-size: 0.9em !important;
+}
+
+.suggestion-text {
+    color: #666;
+    font-weight: 600;
+    letter-spacing: 0px;
+}
+
+.suggestions section {
+    display: grid;
+    grid-template-columns: 35px 2fr 1fr;
+    align-items: center;
+    width: 25vw;
+}
+.suggestions section > div {
+    padding: 8px;
+    width: 200px;
+}
+.suggestions section p, .suggestions section a {
+    margin: 0px;
+}
+.suggestions section p {
+    color: #333;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.suggestions section a {
+    font-size: 0.8em;
+}
+.suggestions section p:nth-child(2) {
+    color: #666;
+    font-size: 0.8em;
+    font-weight: 400;
+}
+.suggestions section .pic {
+    min-width: 30px;
+    min-height: 30px;
+    border: solid 1px #dbdbdb;
+    border-radius: 15px;
+}
+aside header > div {
+    display: flex;
+    align-items: center;
+    width: 25vw;
+}
+
+aside header .pic {
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 33px;
+    border-width: 0px;
+    margin-right: 20px;
+}
+.visuallyhidden {
+    display: none;
+}
+
+.modal-bg {
+    background: rgba(40, 40, 40, 0.8);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-bg .close {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    color: white;
+    border: 0;
+    font-size: 2em;
+}
+
+div.modal {
+    background: white;
+    height: 80vh;
+    width: 90vw;
+    background: #EEE;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    overflow-y: hidden;
+    align-items: center;
+}
+div.modal .container {
+    height: 100%;
+    overflow-y: auto;
+    background: #fff;
+    min-width: 300px;
+}
+div.modal .container h3 {
+    padding: 20px;
+    border-bottom: solid 1px #F2f2f2;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+}
+div.modal .container .pic {
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 15px;
+    border-width: 0px;
+    margin-right: 10px;
+}
+div.modal .container .body {
+    padding: 20px;
+    color: #555;
+}
+div.modal .featured-image {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+body.modal {
+    overflow-y: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+.comment {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 50px auto 30px;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+.comment p {
+    margin-top: 0px;
+    margin-bottom: 6px;
+}
+.comment span {
+    font-weight: bold;
+}
+
+.comment button {
+    background: transparent;
+    border: 0;
+}
+
+button.like, button.bookmark {
+    background: transparent;
+    padding: 0px;
+    font-size: 1em;
+    border: 0;
+}
+.fas.fa-heart {
+    color: #cf0c0c;
+}
+
+
+@media (max-width: 900px) {
+    aside {
+        display: none;
+    }
+    main {
+        width: 100vw;
+        padding: 0px;
+        align-items: center;
+    }
+    .card, .stories {
+        width: 75vw;
+        min-width: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .card, .stories {
+        width: 90vw;
+    }
+    div.modal {
+        grid-template-columns: 1fr;
+    }
+    div.modal .featured-image {
+        display: none;
+    }
+} */
+/*background*/
+body{
+    background: #dfdfdf;
+    margin:0px
+}
+/*navbar*/
+.navbar{
+    top:0;
+    padding-bottom: 10px;
+    position: sticky;
+    width: 100%;
+}
+.navbar-div{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+
+}
+.navbar-right{
+    display: flex;
+    padding-right: 25px;
+    align-items: center;
+}
+.navbar-right .name{
+    padding-right: 20px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}.navbar-right .signout{
+    border: none;
+    background: none;
+    padding-right: 20px;
+    font-size: 18px;
+    color: #1063b2;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}
+.logo
+{
+    font-size: 25px;
+    font-family: 'Comfortaa', cursive;
+    padding-left: 30px;
+}
+
+/*stories*/
+.story-status
+{
+    display: flex;
+    padding: 10px;
+}
+.story-pic{
+    padding: 10px;
+}
+.story{
+    overflow-y: auto;
+    background: #fffdfd;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.story-pic img{
+    border-radius: 50%;
+    width: 60px;
+    border: 3px solid #989898;
+
+}
+.story-card{
+    text-align: center;
+    padding-right: 10px;
+}
+.story-name{
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+/*posts*/
+.reaction-wrapper{
+    display: flex;
+    padding-bottom:20px;
+}
+.post-content{
+    padding: 20px;
+}
+.post-content .likes{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0px 10px 0px;
+}
+.description{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    padding-bottom: 15px;
+}
+.description span{
+    font-size: 17px;
+    font-weight: bold;
+}
+.comment-text span{
+    font-size: 16px;
+    font-weight: bold;
+}
+.comment-text{
+    font-family: 'Open Sans', sans-serif;
+
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+.comment-more{
+    font-size: 14px;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #1063b2;
+    font-size: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+.post-time{
+    color: #5e5d5d;
+}
+.comment-wrapper{
+    border-top: 2px solid #dfdfdf;
+    display: flex;
+    justify-content: space-between;
+    padding:15px 0px 15px 20px;
+    height: 100%;
+}
+.comment-button{
+    border: none;
+    background: none;
+    color: #1063b2;
+    text-transform: capitalize;
+    padding-right: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.follow-btn{
+   border:none;
+   background: none;
+   color: #1063b2; 
+   font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+}
+.unfollow-btn{
+    border:#989898;
+    background: rgb(255, 255, 255);
+    color: #1063b2; 
+    font-family: 'Open Sans', sans-serif;
+     cursor: pointer;
+ }
+.comment-box{
+    border: none;
+    background: none;
+    width: 100%;
+    padding-left: 15px;
+}
+.info{
+    padding:15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.info .username{
+    font-size: 24px;
+    font-family: 'Comfortaa', cursive;
+}
+.info i{
+    width: 25px;
+}
+.main-container
+{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.feed-wrapper
+{
+    
+    width: 70%;
+}
+.post-wrapper
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.post{
+    border-radius: 5px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.image-wrapper
+{
+    text-align: center;
+}
+.post-image
+{
+    width: 100%;
+    height: auto;
+}
+/*sugestions*/
+.suggestions-container
+{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding-left: 20px;
+    position: fixed;
+    right:0;
+    padding-top: 10px;
+}
+.profile-user-pic
+{
+    display: flex;
+}
+.profile-user-card
+{
+    display: flex;
+    align-items: center;
+}
+.profile-user-pic > img{
+    border-radius: 50%;
+    width: 80px;
+    
+}
+.profile-user-pic
+{
+    padding-right: 20px;
+}
+.profile-user-card .username
+{
+    font-size: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    font-family: 'Comfortaa', cursive;
+}
+.suggestion-text{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0px 10px 0px;
+    color:#5e5d5d;
+}
+.profile-card{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    
+}
+.profile-pic{
+    padding-right: 20px;
+}
+.profile-pic img{
+    border-radius: 50%;
+    width: 60px;
+}
+p{
+    margin: 0;
+}
+.username-wrapper
+{
+    font-family: 'Open Sans', sans-serif;
+    padding-right: 80px;
+}
+.username-wrapper .username{
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+.username-wrapper .sub-text{
+    color:#5e5d5d;
+}
+@media only screen and (max-width: 600px) {
+    .suggestions-container{
+        display: none;
+    }
+    .feed-wrapper{
+        width: 100%;
+    }
+    .main-container{
+        width: 90%;
+    }
+}
+/*modal*/
+.modal-class{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+   
+}
+.modal {
+    padding-top: 100px; 
+  }
+  .modal-close{
+      border: none;
+      background: none;
+    position: absolute;
+    right: 0;
+    padding-top: 20px;
+    padding-right: 20px;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    width: 70%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .modal-columns{
+      display: flex;
+      width:100%;
+      height:80%;
+  }
+  .modal-image{
+     width:60%
+  }
+  .modal-info{
+      display: flex;
+      flex-direction: column;
+      width:40%
+  }
+  .modal-user-card{
+    display: flex;
+    align-items: center;
+    padding-top:20px;
+    padding-bottom:10px ;
+    border-bottom: 2px solid #dfdfdf;
+  }
+  .modal-user-pic{
+    display: flex;
+    padding-left:30px;
+    padding-right:30px;
+  }
+  .modal-user-pic > img{
+    border-radius: 50%;
+    width: 50px;
+    
+  }
+  .modal-user-card .username{
+    font-size: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    font-family: 'Comfortaa', cursive;
+  }
+  .modal-post-image
+{
+    width: 100%;
+    height: 100%;
+}
+.modal-comment .upper{
+    display: flex;
+}
+.modal-comment .upper .content{
+    padding: 10px;
+}
+.modal-comment .upper .content .lower{
+    color: #5e5d5d;
+}
+.modal-comment-image > img{
+    border-radius: 50%;
+    width: 50px;
+}
+.modal-comment-image{
+    padding: 10px;
+}
+.modal-comments-wrapper{
+    overflow-y: auto;
+}
