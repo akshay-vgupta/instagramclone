@@ -40,7 +40,7 @@ class Stories extends React.Component {
                         return (
                             <div className="story-card" key={story.id}>
                             <div className="story-pic">
-                                <img src={story.user.thumb_url } className="pic" alt={`profile pic for ${ this.props.username }`} />
+                                <img src={story.user.thumb_url } className="pic" alt={`profile pic for ${ story.user.username }`} />
                                 </div>
                                 <p className="story-name">{ story.user.username }</p>
                             </div> )
